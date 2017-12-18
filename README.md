@@ -29,3 +29,6 @@ Underscores "_" not periods "."
 
 All analysis should be in an R-Notebook.
 
+### R-Markdown
+
+Each R-Markdown should be self-contained with unique outputs 
