@@ -22,7 +22,8 @@ Underscores "_" not periods "."
 
 #### Calling Functions
 
-
+- [Calling functions from other packages](http://kbroman.org/pkg_primer/pages/depends.html)
+- As a lab, we'll be using the :: operator every single time we call a function from an external package, e.g. glue::glue, plyr::dplyr
 
 ### R-Notebooks
 
