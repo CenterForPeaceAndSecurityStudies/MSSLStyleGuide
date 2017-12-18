@@ -29,3 +29,6 @@ Underscores "_" not periods "."
 
 All analysis should be in an R-Notebook.
 
+### R-Markdown
+
+Each R-Markdown should be self-contained and unique (ie outputs of each Rmd should have a unique name).
