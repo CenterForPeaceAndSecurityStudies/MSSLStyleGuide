@@ -1,6 +1,8 @@
 ---
 title: "Documentation"
-output: html_notebook
+output:
+  html_notebook: default
+  html_document: default
 ---
 
 MSSL follows Hadley Wickham's guide to documenting functions as described at http://r-pkgs.had.co.nz/man.html:
