@@ -21,7 +21,6 @@ Underscores "_" not periods "."
 - The name of the file should be the same as the name of the function
 - [Functions should have documentation using roxygen headers](https://rexdouglass.github.io/MSSLStyleGuide/Documentation.nb.html)
 
-
 #### Calling Functions
 
 - [Calling functions from other packages](http://kbroman.org/pkg_primer/pages/depends.html)
