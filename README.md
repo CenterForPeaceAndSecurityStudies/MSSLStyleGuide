@@ -19,7 +19,7 @@ Underscores "_" not periods "."
 
 - R functions go in their own individual .r file.
 - The name of the file should be the same as the name of the function
-- [Functions should have documentation using roxygen headers](https://rexdouglass.github.io/MSSLStyleGuide/Documentation.nb.html)
+- [Functions should have documentation using roxygen headers](https://rexdouglass.github.io/MSSLStyleGuide/Function_Documentation.nb.html)
 
 #### Calling Functions
 

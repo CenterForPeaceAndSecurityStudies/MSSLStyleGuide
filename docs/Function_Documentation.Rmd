@@ -1,5 +1,5 @@
 ---
-title: "Documentation"
+title: "Function_Documentation"
 author: "Rex Douglass and Tom Scherer"
 output:
   html_notebook:
