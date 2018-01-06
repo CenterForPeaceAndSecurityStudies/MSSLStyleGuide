@@ -1,9 +1,22 @@
 ---
 title: "Documentation"
+author: "Rex Douglass and Tom Scherer"
 output:
-  html_notebook: default
-  html_document: default
+  html_notebook:
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
+editor_options:
+  chunk_output_type: inline
 ---
+
+<style>
+    body .main-container {
+        max-width: 100%;
+    }
+</style>
+
 
 MSSL follows Hadley Wickham's guide to documenting functions as described at http://r-pkgs.had.co.nz/man.html:
 
