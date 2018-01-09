@@ -1,3 +1,17 @@
+---
+title: "README"
+output: html_notebook
+---
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+``` 
+ 
 # MSSLStyleGuide
 
 Research projects at the cPASS Machine-Learning for Social Science Lab (MSSL) are complex in terms of authors, methods, and data. To efficiently and transparently manage these projects, MSSL has established a project system based on Github, RStudio, and Latex. This Github repository titled MSSLStyleGuide documents this system as it develops and guides new users in setting up a work station, joining a project, and developing and documenting content. 
