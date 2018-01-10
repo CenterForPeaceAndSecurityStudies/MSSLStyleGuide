@@ -8,6 +8,8 @@ Research projects at the cPASS Machine-Learning for Social Science Lab (MSSL) ar
 Setup
 -----
 
+Rex was here
+
 [Workstation Setup](https://rexdouglass.github.io/MSSLStyleGuide/Workstation_Setup.nb.html) - How to install and setup the software that you will use
 
 [Project Setup](https://rexdouglass.github.io/MSSLStyleGuide/Project_Setup.nb.html) - How to get started on a specific project
