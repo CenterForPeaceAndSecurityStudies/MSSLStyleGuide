@@ -14,21 +14,31 @@ To collaborate on a MSSL project you need the following:
 
 #### Dropbox
 
-MSSL has a Dropbox business account named "rex". If you have not yet been invited, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". If you already have a personal Dropbox account, you can connect it to "rex"; the two accounts will remain seperate but you will be able to access both of them on all your devices.
+MSSL has a [Dropbox](https://www.dropbox.com) business account named "rex". If you have not yet been invited, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". If you already have a personal Dropbox account, you can connect it to "rex"; the two accounts will remain seperate but you will be able to access both of them on all your devices.
 
-In the Dropbox folder, create a folder titled github\_private. This folder is where you will keep projects to make edits and then push to the cloud.
+In the Dropbox folder, create a folder titled "github\_private". This folder is where you will keep projects to make edits and then push to the cloud.
 
 You will also be given access to a shared folder called "MSSL". This folder is mainly for data files that are proprietary or too big for github.
 
-Your Dropbox should ultimately look like this, along with your personal folders. Your github\_private will initially be empty until you join specific projects.
+When ready Dropbox should look like below with "github\_private" and "MSSL" located in "Dropbox (rex)".
 
 ![Dropbox setup](paper/figure/dropbox.png)
 
+Note that "github\_private"" will initially be empty until you join specific projects.
+
 #### R and RStudio
+
+[R](https://www.r-project.org/) is a language and environment for statistical computing and graphcis. It is freely available, very flexible, and make pretty plots. [Download R from the UCLA mirror](http://cran.stat.ucla.edu/) for your operating system and install it.
+
+[RStudio](https://www.rstudio.com/) is a workspace that sits on top of R and makes it easier to edit code, plot data, and share your work. When working in R you will actually open RStudio application instead of the R application. [Download the installer of the free open source version](https://www.rstudio.com/products/rstudio/download/) for your operating system and install it.
 
 #### Github
 
+[Github](https://github.com/) is a development platform for managing coding projects. If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
+
 #### Latex
+
+To be added.
 
 ### Project Setup
 
