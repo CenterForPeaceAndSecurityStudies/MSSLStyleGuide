@@ -15,13 +15,11 @@ knitr::opts_chunk$set(
 
 Research projects at the cPASS Machine-Learning for Social Science Lab (MSSL) are complex in terms of authors, methods, and data. MSSL has adopted a project management system based on Github, RStudio, and Latex that is efficient, organized, transparent, and replicable. This Github repository titled MSSLStyleGuide documents this system as it develops and guides new users in setting up a work station, joining a project, and developing and documenting content. 
 
-[Workstation Setup](https://rexdouglass.github.io/MSSLStyleGuide/Workstation_Setup.nb.html)
+## Setup
 
+[Workstation Setup](https://rexdouglass.github.io/MSSLStyleGuide/Workstation_Setup.nb.html) - How to install and setup the software that you will use
 
-
-
-
-### Project Setup
+[Project Setup](https://rexdouglass.github.io/MSSLStyleGuide/Project_Setup.nb.html) - How to get started on a specific project
 
 ## Datawork
 

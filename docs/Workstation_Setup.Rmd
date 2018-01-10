@@ -27,13 +27,15 @@ To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStu
 
 # Dropbox
 
-MSSL has a [Dropbox](https://www.dropbox.com) business account named "rex". If you have not yet been invited, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". If you already have a personal Dropbox account, you can connect it to "rex"; the two accounts will remain seperate but you will be able to access both of them on all your devices.
+MSSL uses [Dropbox](https://www.dropbox.com) to share large and proprietary datasets; dropbox also helps users move between different workstations and keep them synced. 
 
 In the Dropbox folder, create a folder titled "github_private". This folder is where you will keep projects to make edits and then push to the cloud. 
 
-You will also be given access to a shared folder called "MSSL". This folder is mainly for data files that are proprietary or too big for github. 
+MSSL has a shared dropbox folder called "MSSL". This folder is mainly for data files that are proprietary or too big for github. Since this can get big, MSSL has business account named "rex". You can connect your personal dropbox account to "rex"; the two accounts will remain seperate but you will be able to access both of them on all your devices.
 
-When ready Dropbox should look like below with "github_private" and "MSSL" located in "Dropbox (rex)". 
+If you need access to "rex" and "MSSL" and haven't been invited yet, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". 
+
+When ready Dropbox should look like below with "github_private" and (probably) "MSSL" located in "Dropbox (rex)". 
 
 ![Dropbox setup](../paper/figure/dropbox.png)
 
@@ -49,3 +51,6 @@ Note that "github_private"" will initially be empty until you join specific proj
 
 To be added.
 
+# Joining a project
+
+Now that your workstation is ready, you can move on to [project setup](https://rexdouglass.github.io/MSSLStyleGuide/Project_Setup.nb.html).
