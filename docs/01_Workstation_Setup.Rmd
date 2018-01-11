@@ -27,7 +27,7 @@ To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStu
 
 If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
 
-You also have to [download and install the git software](https://git-scm.com/downloads). Once you have R and RStudio installed, there additional steps to connect it to your Git.
+You also have to [download and install the git software](https://git-scm.com/downloads). Once you have R and RStudio installed, there are additional steps below to enable Git within RStudio.
 
 # Dropbox
 
@@ -41,7 +41,7 @@ If you need access to "rex" and "MSSL" and haven't been invited yet, create a [M
 
 When ready Dropbox should look like below with "github_private" and (probably) "MSSL" located in "Dropbox (rex)". 
 
-![Dropbox setup](.https://raw.githubusercontent.com/rexdouglass/MSSLStyleGuide/master/paper/figure/dropbox.png)
+![Dropbox setup](https://raw.githubusercontent.com/rexdouglass/MSSLStyleGuide/master/paper/figure/dropbox.png)
 
 
 Note that "github_private"" will initially be empty until you join specific projects.
