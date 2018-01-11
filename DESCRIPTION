@@ -15,5 +15,4 @@ Suggests:
     MASS,
     testthat
 Imports: 
-    callr,
     Rcpp

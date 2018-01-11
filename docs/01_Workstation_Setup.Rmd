@@ -21,11 +21,13 @@ editor_options:
 
 To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex.
 
-# Github
+# Git and Github
 
-[Github](https://github.com/) is a development platform for managing coding projects. If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
+[Git](https://git-scm.com/) is a version control system for managing projects and [Github](https://github.com/) is an online hosting service for Git repositories. 
 
+If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
 
+You also have to [download and install the git software](https://git-scm.com/downloads). Once you have R and RStudio installed, there additional steps to connect it to your Git.
 
 # Dropbox
 
@@ -48,6 +50,12 @@ Note that "github_private"" will initially be empty until you join specific proj
 [R](https://www.r-project.org/) is a language and environment for statistical computing and graphcis. It is freely available, very flexible, and make pretty plots. [Download R from the UCLA mirror](http://cran.stat.ucla.edu/) for your operating system and install it.
 
 [RStudio](https://www.rstudio.com/) is a workspace that sits on top of R and makes it easier to edit code, plot data, and share your work. When working in R you will actually open RStudio application instead of the R application. [Download the installer of the free open source version](https://www.rstudio.com/products/rstudio/download/) for your operating system and install it. 
+
+To set up Git with RStudio:
+1. Open RStudio
+2. Go to Global Options (from the Tools menu)
+3. Click Git/SVN
+4. Click Enable version control interface for RStudio projects
 
 # Latex
 
