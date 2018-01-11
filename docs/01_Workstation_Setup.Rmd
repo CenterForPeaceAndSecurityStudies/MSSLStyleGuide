@@ -41,7 +41,8 @@ If you need access to "rex" and "MSSL" and haven't been invited yet, create a [M
 
 When ready Dropbox should look like below with "github_private" and (probably) "MSSL" located in "Dropbox (rex)". 
 
-![Dropbox setup](../paper/figure/dropbox.png)
+![Dropbox setup](.https://raw.githubusercontent.com/rexdouglass/MSSLStyleGuide/master/paper/figure/dropbox.png)
+
 
 Note that "github_private"" will initially be empty until you join specific projects.
 
