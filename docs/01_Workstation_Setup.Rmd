@@ -37,6 +37,8 @@ In the Dropbox folder, create a folder titled "github_private". This folder is w
 
 MSSL has a shared dropbox folder called "MSSL". This folder is mainly for data files that are proprietary or too big for github. Since this can get big, MSSL has business account named "rex". You can connect your personal dropbox account to "rex"; the two accounts will remain seperate but you will be able to access both of them on all your devices.
 
+For undergrads, MSSL will create a project specific folder in the team folder ("MSSL_team") and only share that. 
+
 If you need access to "rex" and "MSSL" and haven't been invited yet, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". 
 
 When ready Dropbox should look like below with "github_private" and (probably) "MSSL" located in "Dropbox (rex)". 
