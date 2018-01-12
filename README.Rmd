@@ -21,7 +21,8 @@ Research projects at the cPASS Machine-Learning for Social Science Lab (MSSL) ar
 
 [02_Project_Setup](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - How to get started on a specific project
 
-[03_Setup_For_Writing](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - Workstation and project setup for those who only need access to the paper.
+[03_Setup_For_Writing](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - Alternative setup and workflow instructions for those who will only be contributing to papers and will not need R/RStudio.
+
 
 ## Datawork
 

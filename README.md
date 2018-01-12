@@ -12,7 +12,7 @@ Setup
 
 [02\_Project\_Setup](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - How to get started on a specific project
 
-[03\_Setup\_For\_Writing](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - Workstation and project setup for those who only need access to the paper.
+[03\_Setup\_For\_Writing](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - Alternative setup and workflow instructions for those who will only be contributing to papers and will not need R/RStudio.
 
 Datawork
 --------
