@@ -12,6 +12,8 @@ Setup
 
 [02\_Project\_Setup](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - How to get started on a specific project
 
+[03\_Setup\_For\_Writing](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - Workstation and project setup for those who only need access to the paper.
+
 Datawork
 --------
 
@@ -51,3 +53,5 @@ Each R-Markdown should be self-contained with unique outputs
 
 Writing
 -------
+
+[TBD\_Syncing\_Edits](https://rexdouglass.github.io/MSSLStyleGuide/TBD_Syncing_Edits.nb.html) - How to write and sync edits

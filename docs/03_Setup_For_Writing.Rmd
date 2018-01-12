@@ -1,7 +1,7 @@
 ---
-title: "01_Workstation_Setup"
+title: "03_Setup_For_Writing"
 author: "Thomas Scherer"
-date: "01/10/2017"
+date: "01/11/2017"
 output:
   html_notebook:
     toc: yes
@@ -18,14 +18,29 @@ editor_options:
 </style>
 
 
+This setup is for MSSL collaborators who only need to contribute to paper writing and will not need R.
 
-To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex.
+# Workstation Setup
 
-# Git and Github
+## Github Desktop
 
-[Git](https://git-scm.com/) is a version control system for managing projects and [Github](https://github.com/) is an online hosting service for Git repositories. 
+[Git](https://git-scm.com/) is a version control system for managing projects. Since you will not be using Git through R, you will be using [Github Desktop](https://desktop.github.com/) to connect with [Github](https://github.com/), the online hosting service for Git repositories. 
 
 If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
+
+Install [Github Desktop](https://desktop.github.com/) by selecting the download for your operating system and running the downloaded installer. When finished, open Github Desktop. On the welcome screen, select "Sign into Github.com" and enter the information for your Github account. Follow the directions through the rest of installation.
+
+To join a project, select "File -> Clone repository"
+
+
+
+
+
+
+
+# OLD STUFF DOWN HERE
+
+
 
 You also have to [download and install the git software](https://git-scm.com/downloads). Once you have R and RStudio installed, there are additional steps below to enable Git within RStudio.
 
@@ -63,7 +78,3 @@ To set up Git with RStudio:
 # Latex
 
 To be added.
-
-# Joining a project
-
-Now that your workstation is ready, you can move on to [project setup](https://rexdouglass.github.io/MSSLStyleGuide/Project_Setup.nb.html).

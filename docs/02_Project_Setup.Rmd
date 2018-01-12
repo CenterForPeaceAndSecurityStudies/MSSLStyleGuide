@@ -1,7 +1,7 @@
 ---
 title: "02_Project_Setup"
 author: "Thomas Scherer"
-date: "1/10/2017"
+date: "01/10/2017"
 output:
   html_notebook:
     toc: yes
@@ -21,9 +21,9 @@ editor_options:
 Once you have completed the [workstation setup](https://rexdouglass.github.io/MSSLStyleGuide/Workstation_Setup.nb.html), you are ready to setup a project or join in on an existing project. 
 
 # Create a project directory
-In RStudio, in the top left select *File -> New Project* or in the top right select *Project: (None) -> New Project*. A New Project window should appear giving three options to set up a project. Select *Version Control*, and then select *Git*. 
+In RStudio, in the top left select **File -> New Project** or in the top right select **Project: (None) -> New Project**. A New Project window should appear giving three options to set up a project. Select **Version Control** then select **Git**. 
 
-For *Repository URL:* paste in the project's Git website (ex. https://github.com/rexdouglass/MSSLStyleGuide). The *Project directory name:* will automatically fill in with the repository name (in example's case, "MSSLStyleGuide"). For *Create project as subdirectory of:*, select your dropbox folder "github_private" (so entry may become "~/Dropbox (rex)/github_private").
+For **Repository URL:** paste in the project's Git website (ex. https://github.com/rexdouglass/MSSLStyleGuide). The **Project directory name:** will automatically fill in with the repository name (in example's case, "MSSLStyleGuide"). For **Create project as subdirectory of:**, select your dropbox folder "github_private" (so entry may become "~/Dropbox (rex)/github_private").
 
 # Pull the existing project files
 
