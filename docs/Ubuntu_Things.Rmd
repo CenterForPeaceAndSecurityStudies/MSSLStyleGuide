@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+# Setup Ubuntu 
+
+## R and Rstudio
+https://www.r-project.org/
+https://www.rstudio.com/products/rstudio/download/
+
+The blog post https://www.r-bloggers.com/how-to-install-r-ubuntu-16-04-xenial/ walks you through installing through terminal. It's great, but check the R and Rstudio websites to get the most recent version numbers.
+
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.1.383-amd64.deb
+sudo gdebi -n rstudio-1.1.383-amd64.deb
+rm rstudio-1.1.383-amd64.deb
+
+
+## GIT
+https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/
+[might be needed, I didn't] https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+
+
+
+## Latex setup
+
+sudo apt-get install texlive lyx
+
+
+## DropBox
+https://www.dropbox.com/install-linux
+
+
+
+
+
+# Setup R on Ubuntu for Dev
+sudo apt-get update
+sudo apt-get install libssl-dev
+
+sudo apt-get install libcurl4-openssl-dev
