@@ -19,7 +19,8 @@ editor_options:
 
 
 
-To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex.
+To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex. This guide walks through installing and setting up these tools. If you are setting up on Linux (Ubuntu specifically), use the [U1_Ubuntu_Installations](https://rexdouglass.github.io/MSSLStyleGuide/U1_Ubuntu_Installations.nb.html) 
+
 
 # Git and Github
 

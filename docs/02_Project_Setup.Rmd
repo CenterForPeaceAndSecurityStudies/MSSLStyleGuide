@@ -37,18 +37,21 @@ In most cases you will be joining a package that is already setup, so after you 
 
 If you are setting up the package for the first time, you can use the package **usethis** to make it easy.
 
-1. Open RStudio and run the following:
+1. Open RStudio create a new package
+
+2. TBD
 
 ```{r}
 
 install.packages("devtools")
 devtools::install_github("r-lib/usethis")
-tmp <- file.path("~/Dropbox (rex)/github_private", "mypkg")
-create_package(tmp)
+library(usethis)
+create_package()
 
 ```
+You will be given an option to overwrite the existing package, don't do it.
 
-2. A new project session will open in RStudio. In the new session run:
+3. A new project session will open in RStudio. In the new session run:
 
 
 ```{r}
@@ -124,11 +127,16 @@ use_data(x, y)
 #> ✔ Saving x to data/x.rda
 #> ✔ Saving y to data/y.rda
 
-dir.create(file.path(tmp, "docs"))
-dir.create(file.path(tmp, "inst"))
-dir.create(file.path(paste0(tmp,"/inst"), "extdata"))
-dir.create(file.path(tmp, "paper"))
-dir.create(file.path(paste0(tmp,"/paper"), "figures"))
+#use_git()
+#> ✔ Initialising Git repo
+#> ✔ Adding '.Rhistory', '.RData', '.Rproj.user' to './.gitignore'
+#> ✔ Adding files and committing
+
+dir.create(file.path(getwd(), "docs"))
+dir.create(file.path(getwd(), "inst"))
+dir.create(file.path(paste0(getwd(),"/inst"), "extdata"))
+dir.create(file.path(getwd(), "paper"))
+dir.create(file.path(paste0(getwd(),"/paper"), "figures"))
 
 ```
 

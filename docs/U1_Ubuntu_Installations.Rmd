@@ -1,0 +1,85 @@
+---
+title: "U1_Ubuntu_Installations"
+author: "Thomas Scherer"
+date: "01/13/2017"
+output:
+  html_notebook:
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
+editor_options:
+  chunk_output_type: inline
+---
+<style>
+    body .main-container {
+        max-width: 100%;
+    }
+</style>
+
+
+
+
+# Setup Ubuntu 
+
+## R and Rstudio
+
+https://www.r-project.org/
+
+https://www.rstudio.com/products/rstudio/download/
+
+The blog post https://www.r-bloggers.com/how-to-install-r-ubuntu-16-04-xenial/ walks you through installing through terminal. It's great, but check the R and Rstudio websites to get the most recent version numbers.
+
+```{terminal}
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.1.383-amd64.deb
+sudo gdebi -n rstudio-1.1.383-amd64.deb
+rm rstudio-1.1.383-amd64.deb
+```
+
+Additional components that might be needed for building with R with you get an error saying they are missing:
+
+```{terminal}
+sudo apt-get update
+sudo apt-get install libssl-dev
+sudo apt-get install libcurl4-openssl-dev
+```
+
+
+## GIT
+
+Run the following from terminal with your own git email and username
+
+```{terminal}
+sudo apt-get update
+sudo apt-get install git-core
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/
+
+[also might be needed, I didn't]
+https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
+
+## Latex setup
+
+```{terminal}
+sudo apt-get install texlive lyx
+
+```
+
+
+
+## DropBox
+
+Download from https://www.dropbox.com/install-linux
+
+
+
+
+
+# Setup R on Ubuntu for Dev
+
+
+
