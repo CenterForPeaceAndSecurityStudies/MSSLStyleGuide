@@ -24,7 +24,7 @@ This setup is for MSSL collaborators who only need to contribute to paper writin
 
 ### Dropbox
 
-MSSL uses [Dropbox](https://www.dropbox.com) to share large and proprietary datasets; ropbox also helps users move between different workstations and keep them synced. If you do not have a Dropbox account, sign up for one at their website. It will automatically download the Dropbox application for you to install. 
+MSSL uses [Dropbox](https://www.dropbox.com) to share large and proprietary datasets; Dropbox also helps users move between different workstations and keep them synced. If you do not have a Dropbox account, sign up for one at their website. It will automatically download the Dropbox application for you to install. 
 
 Once Dropbox is installed, open the Dropbox folder (likely in your home folder) and create a folder titled "github_private". This folder is where you will keep projects to make edits and then push to the cloud. 
 
