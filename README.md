@@ -15,11 +15,11 @@ This Github repository titled MSSLStyleGuide documents this system as it develop
 Setup
 -----
 
-[01\_Workstation\_Setup](https://rexdouglass.github.io/MSSLStyleGuide/01_Workstation_Setup.nb.html) - How to install and setup the software that you will use
+[01\_Workstation\_Setup](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/01_Workstation_Setup.nb.html) - How to install and setup the software that you will use
 
-[02\_Project\_Setup](https://rexdouglass.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - How to get started on a specific project
+[02\_Project\_Setup](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/02_Project_Setup.nb.html) - How to get started on a specific project
 
-[03\_Setup\_For\_Writing](https://rexdouglass.github.io/MSSLStyleGuide/03_Setup_For_Writing.nb.html) - Alternative setup and workflow instructions for those who will only be contributing to papers and will not need R/RStudio.
+[03\_Setup\_For\_Writing](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/03_Setup_For_Writing.nb.html) - Alternative setup and workflow instructions for those who will only be contributing to papers and will not need R/RStudio.
 
 Datawork
 --------
@@ -36,7 +36,7 @@ Underscores "\_" not periods "."
 
 -   R functions go in their own individual .r file.
 -   The name of the file should be the same as the name of the function
--   [Functions should have documentation using roxygen headers](https://rexdouglass.github.io/MSSLStyleGuide/Function_Documentation.nb.html)
+-   [Functions should have documentation using roxygen headers](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/Function_Documentation.nb.html)
 
 #### Calling Functions
 
@@ -61,4 +61,4 @@ Each R-Markdown should be self-contained with unique outputs
 Writing
 -------
 
-[TBD\_Syncing\_Edits](https://rexdouglass.github.io/MSSLStyleGuide/TBD_Syncing_Edits.nb.html) - How to write and sync edits
+[TBD\_Syncing\_Edits](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/TBD_Syncing_Edits.nb.html) - How to write and sync edits

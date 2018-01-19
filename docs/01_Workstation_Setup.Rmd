@@ -19,14 +19,14 @@ editor_options:
 
 
 
-To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex. This guide walks through installing and setting up these tools. If you are setting up on Linux (Ubuntu specifically), use [U1_Ubuntu_Installations](https://rexdouglass.github.io/MSSLStyleGuide/U1_Ubuntu_Installations.nb.html).
+To collaborate on a MSSL project you need to set-up Github, Dropbox, R (and RStudio), and Latex. This guide walks through installing and setting up these tools. If you are setting up on Linux (Ubuntu specifically), use [U1_Ubuntu_Installations](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/U1_Ubuntu_Installations.nb.html).
 
 
 # Git and Github
 
 [Git](https://git-scm.com/) is a version control system for managing projects and [Github](https://github.com/) is an online hosting service for Git repositories. 
 
-If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
+If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [cPASS's account](https://github.com/centerforpeaceandsecuritystudies) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
 
 You also have to [download and install the git software](https://git-scm.com/downloads). Once you have R and RStudio installed, there are additional steps below to enable Git within RStudio.
 
@@ -40,11 +40,11 @@ MSSL has a shared dropbox folder called "MSSL". This folder is mainly for data f
 
 For undergrads, MSSL will create a project specific folder in the team folder ("MSSL_team") and only share that. 
 
-If you need access to "rex" and "MSSL" and haven't been invited yet, create a [MSSLStyleGuide issue](https://github.com/rexdouglass/MSSLStyleGuide/issues) with the label "MSSL". 
+If you need access to "rex" and "MSSL" and haven't been invited yet, create a [MSSLStyleGuide issue](https://github.com/centerforpeaceandsecuritystudies/MSSLStyleGuide/issues) with the label "MSSL". 
 
 When ready Dropbox should look like below with "github_private" and (probably) "MSSL" located in "Dropbox (rex)". 
 
-![Dropbox setup](https://raw.githubusercontent.com/rexdouglass/MSSLStyleGuide/master/paper/figure/dropbox.png)
+![Dropbox setup](https://raw.githubusercontent.com/centerforpeaceandsecuritystudies/MSSLStyleGuide/master/paper/figure/dropbox.png)
 
 
 Note that "github_private"" will initially be empty until you join specific projects.
@@ -67,4 +67,4 @@ To be added.
 
 # Joining a project
 
-Now that your workstation is ready, you can move on to [project setup](https://rexdouglass.github.io/MSSLStyleGuide/Project_Setup.nb.html).
+Now that your workstation is ready, you can move on to [project setup](https://centerforpeaceandsecuritystudies.github.io/MSSLStyleGuide/Project_Setup.nb.html).

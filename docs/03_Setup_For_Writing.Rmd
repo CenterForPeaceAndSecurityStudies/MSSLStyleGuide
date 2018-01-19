@@ -32,7 +32,7 @@ Once Dropbox is installed, open the Dropbox folder (likely in your home folder) 
 
 [Git](https://git-scm.com/) is a version control system for managing projects. Since you will not be using Git through R, you will be using [Github Desktop](https://desktop.github.com/) to connect with [Github](https://github.com/), the online hosting service for Git repositories. 
 
-If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/rexdouglass) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
+If you do not already have a github profile, [sign up for a free account](https://github.com/). When you are logged in, go to [Rex Douglass's account](https://github.com/centerforpeaceandsecuritystudies) and select "Follow" under profile picture. Rex will add you to the repository for a project; you can remind him to by selecting the appropriate repository, selecting the "Issues" tab (between "Code" and "Pull requests") and creating a "New Issue".
 
 Install [Github Desktop](https://desktop.github.com/) by selecting the download for your operating system and running the downloaded installer. When finished, open Github Desktop. On the welcome screen, select "Sign into Github.com" and enter the information for your Github account. Follow the directions through the rest of installation.
 
@@ -46,7 +46,7 @@ Section to be added, but if you already have latex on your machine then no other
 
 Once you have setup Dropbox, Github/Github Desktop, and Latex, you are ready to join a project.
 
-Open Github Desktop and select "File -> Clone repository". If you are already part of the project's Github repository you can select it on the **Github.com** tab, otherwise go to the **URL** tab and paste in the url of the project's repository (for example, https://github.com/rexdouglass/InfluenceOfSeapower). In local path, hit **Choose** then find and select the folder "github_private" that you created. Hit **Clone** and the program will grab the repository from the cloud and download it to your computer.
+Open Github Desktop and select "File -> Clone repository". If you are already part of the project's Github repository you can select it on the **Github.com** tab, otherwise go to the **URL** tab and paste in the url of the project's repository (for example, https://github.com/centerforpeaceandsecuritystudies/InfluenceOfSeapower). In local path, hit **Choose** then find and select the folder "github_private" that you created. Hit **Clone** and the program will grab the repository from the cloud and download it to your computer.
 
 # Workflow
 
