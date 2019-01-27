@@ -1,6 +1,6 @@
 ---
 title: "ariane_demo"
-author: "Ariane Bhargava"
+author: "Ariane Tsai"
 date: "1/27/2019"
 output: html_document
 ---
