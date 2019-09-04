@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # UpSet Plots in R: An Alternative to Venn Diagrams
 
-Essentially, UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of the interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying information concerning multiple variables and their interactions, and there exists several useful resources online (see the final section of this R Markdown file.
+Essentially, UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of the interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying multiple variables and their relationship with one another, and there exists several useful resources online (see the final section of this R Markdown file.
 
 # UpSet with ICB Data
 Set up workspace
