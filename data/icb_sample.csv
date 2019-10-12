@@ -1,0 +1,227 @@
+"","year","year_pdf","actor","crisis_year_dum","domain_air","domain_land","domain_sea","domain_wmd","unit_air_bombers","unit_air_fighters","unit_air_missiles","unit_air_surveillance","unit_land_armor","unit_land_artillery","unit_land_troops","unit_sea_carriers","unit_sea_submarines","unit_sea_surfaceships","unit_wmd_chemical","unit_wmd_nuclear","coder_uncertain","raw_text","coder_notes"
+"2100",1931,1932,"Panama",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6445",1962,1963,"Bahrain",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4480",1948,1949,"German Democratic Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4916",1951,1952,"Guatemala",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"3194",1939,1940,"German Federal Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10686",1991,1992,"Portugal",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1228",1925,1926,"Malta",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8650",1977,1978,"Kenya",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1953",1930,1931,"Norway",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8902",1979,1980,"Dominican Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13763",2013,2014,"Djibouti",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6415",1961,1962,"Sudan",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10999",1993,1994,"Tunisia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6764",1964,1965,"Ethiopia",1,1,1,1,0,1,1,0,0,1,1,1,0,0,1,0,0,NA,"Army. The Army, trained by British officers from 1947 to
+1951, comprises 23 infantry and 4 artillery battalions, an armoured squadron,
+an airborne rifle battalion and ancillary services. In addition, there is the
+imperial bodyguard, now part of the Army, comprising 9 infantry battalions.
+Ethiopian officers are trained at the Military Training College at Holletta,
+near Addis Ababa, and at the Haile Selassie Military Academy, Harar,
+established in 1957 under the direction of Indian officers. An American
+Military Mission arrived in the country in 1954.
+Navy. The Imperial Navy, with Norwegian naval officers as instructors,
+in 1964 consisted of a training ship (1,766 tons; ex.US seaplane tender),
+2 motor torpedo-boats (ex.Yugoslav), 5 patrol boats (ex.US coastguard
+motor boats) and 2 small landing craft. 1'he Naval School has been estab·
+lished at Massawa. Personnel, 120 officers and 600 men.
+Air Force. The Impcrial Air Force, trained by Swedish and American
+personnel, has its headquarters at Debre Zeit, near Addis Ababa. It
+comprises a training school at Bishoftu, a central workshop at Harnr Meda,
+one day.fighter squadron equipped with F-86 Sabres, light-bomber units
+with obsolescent Swedish Saab·17s and one transport squadron equipped with
+C-548, C-47s, one Il-14 and Doves. Training aircraft include T·33 jet advanced
+trainers and piston-engined Saab-91s.",NA
+"3753",1943,1944,"Djibouti",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13702",2012,2013,"Slovenia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1208",1925,1926,"Iran",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8811",1978,1979,"Najd",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4830",1950,1951,"Rwanda",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11027",1994,1995,"Bosnia & Herzegovina",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13380",2010,2011,"Malawi",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12337",2003,2004,"Ecuador",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2394",1933,1934,"Qatar",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10614",1991,1992,"Cyprus",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10822",1992,1993,"Pakistan",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13442",2010,2011,"Zimbabwe",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11216",1995,1996,"India",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11638",1998,1999,"Guinea",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8849",1978,1979,"Syria",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5202",1953,1954,"Guatemala",1,1,1,0,0,NA,NA,NA,NA,NA,NA,1,0,0,0,0,0,NA,"Military service (2 years) is compulsory between the ages of 18 and 50
+(from 18 to 30 in the special reserves), and conscripts may be called upon
+for work in communications, reforestation and agriculture. The Army
+numbers between 7,000 and 8,000; the Guardia Civil, available for emergencies,
+has between 2,000 and 3,000. There is a small Air Force. The
+chief of the armed forces is chosen by Congress for a term of 6 years; Congress
+may remove him for any cause.",NA
+"6928",1965,1966,"Iran",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8001",1972,1973,"United States",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,NA,1,NA,"Operational Commands and Weapons. The larger commands are the army group,
+the field army and the corps. A typical army group may consist of 2 field armies.
+A typical field army may consist of 3 corps; combat forces of armour and
+infantry; air defence artillery (Nike-HerclIles and Hawk missile battalions); field
+artillery (Pershing missile battalions); combat support forces of aviation,
+engineer and signal elements; and combat service support forces. A typical
+corps may consist of 2 mechanized infantry divisions, 1 infantry division and 1
+armoured division; 1 mechanized infantry brigade; 1 armoured cavalry regiment;
+corps artillery (ISS-mrn howitzer, 8-in. howitzer, 17S-mrn gun, Honest John
+rocket and Sergeant missile battalions), air defence group (Nike-Hercules, Hawk
+and CltaparraljVulcan battalions), and a target-acquisition battalion; combat
+support and combat service support forces.Attack aircraft carriers 16 16 17 17 IS IS 15 IS
+Su~port aircraft carriers 11 11 11 11 12 12 12 10
+He icopter carriers 1 8 8 9 9 7 7 7 7
+Communications relay ships 2 2 2 2 2 2 2 2
+Command ships 2 2 2 2 2 2 2 2
+Nuclear powered submarines 55 6S 73 77 87 93 100 103
+Submarines (eonventional) 140 137 127 116 89 62 56 39
+Battleships 4 4 4 4 4 4 4 4
+Cruisers 40 37 35 3S 35 32 23 23
+Frigates (Destroyer leaders) 30 3S 33 33 33 33 33 32
+Destroyers 360 3S0 345 343 294 289 232 177
+Escort ships 270 264 258 252 225 223 198 143Of the fighter-bomber and interceptor aircraft in service, the F-102 Delta
+Dagger, F-105 Thunderchief, F-106 Delta Dart, F-111 and F-4 Phantom 11 fly
+faster than sound in level flight and can carry a variety of armament, including
+nuclear weapons. The subsonic A-7 Corsair 11 is an attack aircraft for nonnuclear
+warfare. Strategic bombers are the B-52 Stratofortress heavy bomber
+and the FB-111A 'swing-wing' supersonic bomber. The strategic Air Command
+also operates SR-71 long-range supersonic reconnaissance aircraft. Current
+transport types include the KC-135 Stratotanker jet tanker-transport, C-141
+Starlifter. the very large C-5 Galaxy jet transports and the turboproppowered
+C-130 Hercules. Intercontinental baIlistic missiles in USAF service are
+Titan 11 and Minuteman I, 11 and IU.",NA
+"13205",2009,2010,"Ghana",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"7214",1967,1968,"Iran",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8083",1973,1974,"Lesotho",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"9506",1983,1984,"Jordan",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6644",1963,1964,"Israel",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1909",1930,1931,"Germany",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6617",1963,1964,"Ecuador",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6360",1961,1962,"Jordan",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4304",1947,1948,"Bangladesh",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5956",1958,1959,"Niger",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"890",1923,1924,"Cyprus",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4531",1948,1949,"Panama",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12361",2003,2004,"Indonesia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6280",1960,1961,"Tunisia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4705",1949,1950,"Thailand",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"399",1919,1920,"El Salvador",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"7239",1967,1968,"Namibia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13774",2013,2014,"Gambia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11192",1995,1996,"Democratic Republic of Vietnam",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12702",2005,2006,"Solomon Islands",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5163",1953,1954,"Bolivia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"3424",1940,1941,"United Kingdom",1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,0,NA,"Until 1937, the Regular Army at home available for field service retained
+its pre-1914 pattern, consisting of 5 infantry divisions each of 12
+battalions and the eleJr.euts of 1 cavalry division. The only significant
+addition was a solitary tank brigade, formed in 1934. The re-equip'Dent
+of this force was so backward that, if war had come in Battlelhfps and Battle Cruisers •
+ACrirueirsaefrt.s Carri. ers .. :': I
+Anti-Aircraft Ships • .
+Flotilla leaders and Destroyers
+Submarines • United Kingdom: (a) Bomber command (headquarters, Uxbridge), 5
+regular and auxiliary group; (b) Fighter command (headquarters, Stamore),
+2 regular and 1 army co-operative group ; (c) Coastal command (headquarters,
+Lee-on-Solent), 3 groups ; (d) Training command (headquarters, Market
+Drayton), 5 groups; (e) Maintenance command (headquarters, Andover);
+(f) Balloon command (headquarters, London}; (g) Reserve command, responsible
+for the training of all volunteer service un",NA
+"7312",1968,1969,"Bulgaria",1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,0,NA,"Army. In Oct. 1966 the Army had a strength of 125,000 men, organized in
+8 motorized and 3 tank divisions. There are 3 Army Commands (Military
+Regions), Sofia, Plovdiv, Sliven. Tanks, mainly T-34s and some T-54s and
+T-55s, numbered 2,500. Security police numbered 45,000 (5 brigades of border
+guards, 8 regiments of security forces) .
+Navy. The Navy consists of 2 ex-Soviet submarines, 2 ex-Soviet frigates, 8
+patrol vcssels, 8 motor torpedo-boats, 2 fleet minesweepers, 4 inshore mineswcepers,
+22 minesweeping boats, 10 landing craft, a training vessel and a tug.
+PersonneI, 1968, was 7,000.
+Air Force. The large tactical Air Force has about 250 Soviet-built combat
+aircraft and more than 20,000 personnel. There are estimated to be 6 interceptor
+squadrons of MiG-19s, 6 interceptor squadrons of MiG-17s (some re-equipping
+with MiG-21 s), 6 ground-attack squadrons of MiG-17s, 3 reconnaissance
+squadrons of MiG-17s, about 20 transport aircraft and 40 Mi-4 helicopters.
+Soviet-built ' Guideline ' surface-to-air missiles have also been supplied to Bulgaria",NA
+"2736",1936,1937,"Bulgaria",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2954",1937,1938,"Norway",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"443",1920,1921,"Bangladesh",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10702",1991,1992,"Spain",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"9096",1980,1981,"Mozambique",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6691",1963,1964,"El Salvador",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2757",1936,1937,"Egypt",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6303",1961,1962,"Belgium",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"9566",1983,1984,"Tanzania",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6771",1964,1965,"Germany",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8533",1976,1977,"Oman",1,1,1,1,0,0,1,1,0,1,1,1,0,0,1,0,0,NA,"Army. The Army is of 7 battalions with personnel of 13,200 with an
+artillery regiment, signals regiment, sapper company and armoured-car squadron.
+Navy. The Navy comprises 3 fast patrol boats, an armed royal yacht, 2 patrol
+vessels (ex-Netherlands coastal minesweepers), a training ship, a support ship, 3
+landing craft and 2 coastal patrol craft. Four more fast patrol boats are on order,
+as weil as 2 coastal minesweepers. Naval personnel in 1977 totalIed 450 officers
+and ratings.
+Air Force. The Air Force, formed in 1959, is being buHt up rapidly. lt had in
+1976 a ground attack squadron of 31 Hunters, a counter-insurgency squadron
+with about 20 BAC Strikemaster light jet attack aircraft, 3 BAC One-Eleven
+twin-turbofan transports, 2 Caribou, 8 Defender, 15 Skyvan and 3 Turbo-Porter
+light transports, and up to 35 Agusta-Bell 205, 214A and JetRanger helicopters
+for security duties. On order are 12 Jaguar supersonic attack aircraft. Air defence
+force has more than 2 batteries of Rapier low-Ievel surface-to-air missiles.
+Personnel about 1,000.",NA
+"2660",1935,1936,"Myanmar (Burma)",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6660",1963,1964,"Mexico",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10849",1992,1993,"Sweden",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"7815",1971,1972,"Niger",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12724",2005,2006,"Yemen People's Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8212",1974,1975,"Iceland",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"310",1919,1920,"Chad",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5821",1957,1958,"Philippines",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4478",1948,1949,"France",1,1,1,1,0,NA,NA,NA,NA,NA,1,1,1,1,1,0,0,NA,"The normal composition of a French army corps is 2 infantry divisions,
+1 reconnaissance group, 1 regiment of artillery, 1 battalion of engineers,
+1 group and I company of observation balloons and administrative
+services Battleollips .
+.A..Ircraft carriers
+Cruisers • • • .
+Deotro;ers and torpedo boats
+Submarines
+2 1 2
+2 2 2
+9 9 11
+28 24 28
+15 15 12 There is no lack of first-class personnel,
+and aircraft manufacture is in progress. New designs are in development.
+The Germans during the occupation used French factories, and these have
+been re-adapted. Aircraft are, however, being purchased from Britain and
+the United States, whilst British and American aircraft used by French
+squadrons during the war are still maintained in considerable number",NA
+"10422",1989,1990,"Syria",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5859",1957,1958,"Yemen",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8161",1974,1975,"Bahrain",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2579",1935,1936,"Argentina",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6125",1959,1960,"Somalia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1675",1928,1929,"Papua New Guinea",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13264",2009,2010,"Rumania",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11001",1993,1994,"United Arab Emirates",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2051",1931,1932,"Ghana",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"4733",1950,1951,"Bangladesh",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8002",1972,1973,"Venezuela",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1037",1924,1925,"Dominican Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10711",1991,1992,"Thailand",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1012",1924,1925,"Belgium",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5039",1952,1953,"Denmark",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11578",1997,1998,"Vichy France",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11616",1998,1999,"Czechoslovakia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2731",1936,1937,"Bangladesh",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10752",1992,1993,"Colombia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"7573",1969,1970,"Venezuela",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1021",1924,1925,"Cambodia",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10200",1988,1989,"German Democratic Republic",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2820",1936,1937,"Poland",1,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,NA,"Infantry
+Cavalry.
+Artillery
+Engineers
+Air Force
+Tanks. .
+Armoured trains Poland has a fleet of 2 destroyers, 3 submarines and 2 gunboats. There
+are also 1 surveying vessel, 1 transport, 4 mine..sweepers, and 5 ex-German
+torpedo-boats. There is a flotilla of 8 river monitors on the Vistula, A
+mine-layer of 2,200 tons is being built in France, 2 flotilla leaders in
+England and 3 submarines in the Netherlands.",NA
+"11495",1997,1998,"Guinea",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11246",1995,1996,"Nigeria",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

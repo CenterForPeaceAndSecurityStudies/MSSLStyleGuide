@@ -1,22 +1,11 @@
 ---
 title: "UpSet Plots"
 author: "Thomas Brailey"
+date: "October 2019"
 output:
-  html_notebook:
-  toc: yes
-toc_float: yes
-html_document:
-  toc: yes
-editor_options:
-  chunk_output_type: inline
+  html_document:
+    df_print: paged
 ---
-  
-  <style>
-  body .main-container {
-    max-width: 100%;
-  }
-</style>
-  
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -24,23 +13,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # UpSet Plots in R: An Alternative to Venn Diagrams
 
-Essentially, UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of the interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying multiple variables and their relationship with one another, and there exists several useful resources online (see the final section of this R Markdown file.
+UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying multiple variables and their relationship with one another, and there exists several useful resources online (see the final section of this R Markdown file).
 
-# UpSet with ICB Data
-Set up workspace
-```{r}
+This document provides a basic but thorough workflow for formatting and plotting data using UpSet. 
 
+## UpSet with ICB Sample Data
+
+First we need to set up the workspace and install the data. UpSet works best with long-form data, so time-series and wide data should be melted accordingly. 
+
+```{r eval =F, include=T, size = 'tiny'} 
 # Load packages
 library(magrittr)
 library(ggplot2)
 
 # Install data
-icb_denom <- readRDS(paste0(here::here(), '/data/icb_denom.rds'))
-
+icb_denom <- read.csv(paste0(here::here(), '/data/icb_sample.csv'))
 ```
-We want to look at which country-year observations in the ICB dataset have which combination of domains (land, sea, air, and weapons of mass destruction). Note that, for the purposes of visualization, NA values need to be set to 0. 
-```{r}
 
+We want to look at which country-year observations in the ICB dataset sample have which combination of domains (land, sea, air, and weapons of mass destruction). Note that, for the purposes of visualization, NA values need to be set to 0. 
+
+```{r eval =F, include=T, size = 'tiny'} 
 # Subset for domain and clean data
 icb_denom_dom <- icb_denom %>%
   dplyr::select(year, year_pdf,
@@ -60,49 +52,63 @@ icb_denom_dom <- icb_denom %>%
                 "Land" = domain_land,
                 "Sea" = domain_sea,
                 "WMD" = domain_wmd)
+
 icb_denom_dom[is.na(icb_denom_dom)] <- 0
 icb_denom_dom <- as.data.frame(icb_denom_dom)
-
 ```
-Now we generate the UpSet plot. Note that the grid:: commands are for additional annotations and are completely optional.  
-```{r}
-# upset
+
+Here is a glimpse of our cleaned data. Our unit of analysis is country, year, domain. 
+
+```{r eval =F, include=T, size = 'tiny'} 
+dplyr::glimpse(icb_denom_dom)
+```
+
+## Using UpSetR
+
+Now we generate the UpSet plot. Note that the grid:: commands are for additional annotations and are completely optional. That said, they are helpful in providing information on the number of observations in the dataset.   
+
+```{r eval =F, include=T, size = 'tiny'} 
+jpeg(filename = paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"),
+     width = 2500,
+     height = 2000
+     )
+# UpSetR commands
 UpSetR::upset(icb_denom_dom,
-      nsets = 4, number.angles = 0, point.size = 3.5, line.size = 2, text.scale = 2.2,
-      mainbar.y.label = "Frequency of Domain", sets.x.label = "Total Observations", order.by = "freq")
+      nsets = 4, 
+      number.angles = 0, 
+      point.size = 6, 
+      line.size = 4, 
+      text.scale = 3,
+      mainbar.y.label = "Frequency of Domain", 
+      sets.x.label = "Total Observations", 
+      order.by = "freq"
+      )
 
 grid::grid.text(
   "Source: Country-Year Observations from the International Crisis Behavior and the Statesman's Yearbook (1919-2014)",
   x = 0.70,
   y = 0.02,
   gp = grid::gpar(
-    fontsize = 14,
+    fontsize = 18,
     fontface = 3
   )
 )
-
-grid::grid.edit('arrange', name="icb_denom_dom")
-
-vp <- grid::grid.grab()
-gridExtra::grid.arrange(
-  grobs = list(
-    vp
-  ),
-  top="Domain Combinations for Country-Year Observations",
-  fontsize = 16,
-  cols=1
-)
-
+dev.off()
 ```
-Here is our output. Clear, concise, and able to simplify our large-N ICB dataset. 
-![](icb_denom_dom_upset.png)
+
+Here is our output. Clear, concise, and able to simplify our large-N ICB dataset sample. While we do not see the domains of the individual states, we are able to understand how many states have which combinations of equipment. For example, we see that, from our sample, it is common for states to own equipment in each of the land, sea, and air domains, though it is less common to see states have equipment in all four domains.  
+
+```{r, out.width = "2500px", out.height = "2000px", fig.cap = "UpSet Plot of State Domains", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
+knitr::include_graphics(paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"))
+```
 
 # Further Resources
 
-[CRAN](https://cran.r-project.org/web/packages/UpSetR/vignettes/basic.usage.html)
+* [CRAN](https://cran.r-project.org/web/packages/UpSetR/vignettes/basic.usage.html) - The creators of the UpSetR package have a concise and easy-to-follow vignette on Cran. 
+* [Little Miss Data's Blog](https://www.littlemissdata.com/blog/set-analysis) - Little Miss Data's blog on the benefits of UpSet plots over the use of Venn diagrams is an excellent starting point for those wanting to implement these visualizations in their own work.
+* [Little Miss Data's GitHub](https://github.com/lgellis/MiscTutorial/tree/master/sets) - Little Miss Data all posts their replication code for their blog post on their GitHub.
+* [R-bloggers](https://www.r-bloggers.com/hacking-our-way-through-upsetr/) - One of the benefits of UpSetR is that it can be modified with ease. From adding extra labels, titles, and text using the grid:: package, to implementing different color schemes along the observations bar, UpSetR is very versatile. This page assumes a strong understanding of R and writing packages. 
 
-[Little Miss Data's Blog](https://www.littlemissdata.com/blog/set-analysis)
 
-[Little Miss Data's GitHub](https://github.com/lgellis/MiscTutorial/tree/master/sets)
 
-[R-bloggers](https://www.r-bloggers.com/hacking-our-way-through-upsetr/) 
+
