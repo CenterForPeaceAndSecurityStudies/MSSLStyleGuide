@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying multiple variables and their relationship with one another, and there exists several useful resources online (see the final section of this R Markdown file).
 
-This document provides a basic but thorough workflow for formatting and plotting data using UpSet. 
+This document provides a basic but thorough workflow for formatting and plotting data using UpSetR. 
 
 ## UpSet with ICB Sample Data
 
@@ -61,6 +61,18 @@ Here is a glimpse of our cleaned data. Our unit of analysis is country, year, do
 
 ```{r eval =F, include=T, size = 'tiny'} 
 dplyr::glimpse(icb_denom_dom)
+
+# Observations: 100
+# Variables: 9
+# $ year        <int> 1931, 1962, 1948, 1951, 1939, 1991, 1925, 1977, 1930, 1979, 2013, 1961, 1993, 1964, 1943, 2012, 192...
+# $ year_pdf    <int> 1932, 1963, 1949, 1952, 1940, 1992, 1926, 1978, 1931, 1980, 2014, 1962, 1994, 1965, 1944, 2013, 192...
+# $ actor       <fct> Panama, Bahrain, German Democratic Republic, Guatemala, German Federal Republic, Portugal, Malta, K...
+# $ Air         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, ...
+# $ Land        <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, ...
+# $ Sea         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ...
+# $ WMD         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ...
+# $ raw_text    <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "Army. The Army, trained by British officers fr...
+# $ coder_notes <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
 ```
 
 ## Using UpSetR
@@ -76,9 +88,9 @@ jpeg(filename = paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"),
 UpSetR::upset(icb_denom_dom,
       nsets = 4, 
       number.angles = 0, 
-      point.size = 6, 
+      point.size = 10, 
       line.size = 4, 
-      text.scale = 3,
+      text.scale = 5,
       mainbar.y.label = "Frequency of Domain", 
       sets.x.label = "Total Observations", 
       order.by = "freq"
@@ -89,7 +101,7 @@ grid::grid.text(
   x = 0.70,
   y = 0.02,
   gp = grid::gpar(
-    fontsize = 18,
+    fontsize = 25,
     fontface = 3
   )
 )
@@ -101,6 +113,10 @@ Here is our output. Clear, concise, and able to simplify our large-N ICB dataset
 ```{r, out.width = "2500px", out.height = "2000px", fig.cap = "UpSet Plot of State Domains", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
 knitr::include_graphics(paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"))
 ```
+
+# Limitations
+
+While UpSet plots are useful for large-N datasets and comparing combinations of variables, the package itself has some limitations. For example, the standard package does not allow for titles and so the grid:: package must be employed. As such, aesthetic tweaks are somewhat more challenging than, say, ggplot2. That means, if we were to create a function that loops across multiple country/years (as is often the case with visualizations in the ITL lab), we would likely have to resort to manual aesthetic tweaks. Additionally, interpreting UpSet plots can become challenging when there are a large number of sets. In our case, we only have four sets (WMD, Air, Sea, Land), but our data would need serious manipulation if we were comparing countries across, say, fifteen sets.  
 
 # Further Resources
 
