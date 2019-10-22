@@ -1,5 +1,6 @@
 ---
-title: "UpSet Plots"
+title: "UpSet Plots in R"
+subtitle: "Center for Peace and Security Studies (cPASS)" 
 author: "Thomas Brailey"
 date: "October 2019"
 output:
@@ -11,13 +12,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# UpSet Plots in R: An Alternative to Venn Diagrams
+# UpSet Plots in R: A Preferred Alternative to Venn Diagrams
 
 UpSet plots are a concise and easy-to-understand version of a Venn Diagram. Rather than looking at several proportional overlapping circles, one can view the frequencies of interactions of given variables in bar-plot form. They are very easy to plot in R, are incredibly useful for conveying multiple variables and their relationship with one another, and there exists several useful resources online (see the final section of this R Markdown file).
 
 This document provides a basic but thorough workflow for formatting and plotting data using UpSetR. 
 
-## UpSet with ICB Sample Data
+### UpSet with MSSL Nation Q-Code Data
 
 First we need to set up the workspace and install the data. UpSet works best with long-form data, so time-series and wide data should be melted accordingly. 
 
@@ -27,98 +28,86 @@ library(magrittr)
 library(ggplot2)
 
 # Install data
-icb_denom <- read.csv(paste0(here::here(), '/data/icb_sample.csv'))
+entities <- rio::import(paste0(here::here(), '/data/entities.RData'))
 ```
 
-We want to look at which country-year observations in the ICB dataset sample have which combination of domains (land, sea, air, and weapons of mass destruction). Note that, for the purposes of visualization, NA values need to be set to 0. 
+We want to look at which nation q-codes are present in the Machine Learning for Social Science Lab (MSSL) dataset compared with those in existing datasets (COW, GW, IMI, UCDP, and ISD). Note that, for the purposes of visualization, NA values need to be set to 0. 
 
 ```{r eval =F, include=T, size = 'tiny'} 
-# Subset for domain and clean data
-icb_denom_dom <- icb_denom %>%
-  dplyr::select(year, year_pdf,
-               actor,
-               #crisis_year_dum,
-               domain_air,
-               domain_land,
-               domain_sea,
-               domain_wmd,
-               #coder_uncertain,
-               raw_text,
-               coder_notes
-               ) %>%
-  dplyr::mutate(domain_wmd = ifelse(domain_wmd == 10, 1, domain_wmd),
-                domain_air = ifelse(domain_air == 11, 1, domain_air)) %>%
-  dplyr::rename("Air" = domain_air,
-                "Land" = domain_land,
-                "Sea" = domain_sea,
-                "WMD" = domain_wmd)
-
-icb_denom_dom[is.na(icb_denom_dom)] <- 0
-icb_denom_dom <- as.data.frame(icb_denom_dom)
+# Subset by relevant variables (if necessary) and clean data
+entities_clean <- entities %>%
+  dplyr::rename("In MSSL" = in_MSSL,
+                "In COW" = in_COW_nat,
+                "In GW" = in_GW,
+                "In IMI" = in_IMI,
+                "In UCDP" = in_UCDP,
+                "In ISD" = in_ISD)
+entities_clean[is.na(entities_clean)] <- 0
+entities_clean <- as.data.frame(entities_clean)
 ```
 
-Here is a glimpse of our cleaned data. Our unit of analysis is country, year, domain. 
+Here is a glimpse of our cleaned data. Our unit of analysis is "nation_wikidata_id". 
 
 ```{r eval =F, include=T, size = 'tiny'} 
-dplyr::glimpse(icb_denom_dom)
+dplyr::glimpse(entities_clean)
 
-# Observations: 100
-# Variables: 9
-# $ year        <int> 1931, 1962, 1948, 1951, 1939, 1991, 1925, 1977, 1930, 1979, 2013, 1961, 1993, 1964, 1943, 2012, 192...
-# $ year_pdf    <int> 1932, 1963, 1949, 1952, 1940, 1992, 1926, 1978, 1931, 1980, 2014, 1962, 1994, 1965, 1944, 2013, 192...
-# $ actor       <fct> Panama, Bahrain, German Democratic Republic, Guatemala, German Federal Republic, Portugal, Malta, K...
-# $ Air         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, ...
-# $ Land        <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, ...
-# $ Sea         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ...
-# $ WMD         <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ...
-# $ raw_text    <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "Army. The Army, trained by British officers fr...
-# $ coder_notes <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...
+# Observations: 351
+# Variables: 7
+# $ nation_wikidata_id <chr> "Q1000", "Q1005", "Q1006", "Q1007", "Q1008", "Q1009", "Q1011", "Q1013", "Q1013421", "Q1014",...
+# $ `In MSSL`          <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,...
+# $ `In COW`           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
+# $ `In GW`            <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
+# $ `In IMI`           <dbl> 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1,...
+# $ `In UCDP`          <dbl> 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0,...
+# $ `In ISD`           <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
 ```
 
-## Using UpSetR
+### Using UpSetR
 
 Now we generate the UpSet plot. Note that the grid:: commands are for additional annotations and are completely optional. That said, they are helpful in providing information on the number of observations in the dataset.   
 
 ```{r eval =F, include=T, size = 'tiny'} 
-jpeg(filename = paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"),
-     width = 2500,
-     height = 2000
+jpeg(filename = paste0(here::here(), "/paper/figure/entities_upset.jpeg"),
+     width = 1000,
+     height = 750
      )
 # UpSetR commands
-UpSetR::upset(icb_denom_dom,
-      nsets = 4, 
+UpSetR::upset(entities_clean,
+      nsets = 6, 
       number.angles = 0, 
-      point.size = 10, 
-      line.size = 4, 
-      text.scale = 5,
-      mainbar.y.label = "Frequency of Domain", 
+      point.size = 4, 
+      line.size = 2, 
+      text.scale = 2,
+      mainbar.y.label = "Frequency of Q-Code Observations", 
       sets.x.label = "Total Observations", 
       order.by = "freq"
       )
 
 grid::grid.text(
-  "Source: Country-Year Observations from the International Crisis Behavior and the Statesman's Yearbook (1919-2014)",
+  "Source: MSSL (2019)",
   x = 0.70,
   y = 0.02,
   gp = grid::gpar(
-    fontsize = 25,
+    fontsize = 14,
     fontface = 3
   )
 )
 dev.off()
 ```
 
-Here is our output. Clear, concise, and able to simplify our large-N ICB dataset sample. While we do not see the domains of the individual states, we are able to understand how many states have which combinations of equipment. For example, we see that, from our sample, it is common for states to own equipment in each of the land, sea, and air domains, though it is less common to see states have equipment in all four domains.  
+Here is our output. Clear, concise, and able to simplify our large-N q-code entities dataset. Ordering the visualization by descending frequency shows that the MSSL dataset has the single largest number of nation Q-Code IDs. 97 of these Q-Codes can be found in all six of the datasets.  
 
-```{r, out.width = "2500px", out.height = "2000px", fig.cap = "UpSet Plot of State Domains", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
-knitr::include_graphics(paste0(here::here(), "/paper/figure/icb_sample_upset.jpeg"))
+```{r, out.width = "2500px", out.height = "2000px", fig.cap = "UpSet Plot of Nation Q-Code Observations Across Datasets", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
+knitr::include_graphics(paste0(here::here(), "/paper/figure/entities_upset.jpeg"))
 ```
 
-# Limitations
+### Limitations
 
-While UpSet plots are useful for large-N datasets and comparing combinations of variables, the package itself has some limitations. For example, the standard package does not allow for titles and so the grid:: package must be employed. As such, aesthetic tweaks are somewhat more challenging than, say, ggplot2. That means, if we were to create a function that loops across multiple country/years (as is often the case with visualizations in the ITL lab), we would likely have to resort to manual aesthetic tweaks. Additionally, interpreting UpSet plots can become challenging when there are a large number of sets. In our case, we only have four sets (WMD, Air, Sea, Land), but our data would need serious manipulation if we were comparing countries across, say, fifteen sets.  
+While UpSet plots are useful for large-N datasets and comparing combinations of variables, the package itself has some limitations. For example, the standard package does not allow for titles and so the grid:: package must be employed. As such, aesthetic tweaks are somewhat more challenging than, say, ggplot2. That means, if we were to create a function that loops across multiple country/years (as is often the case with visualizations in the In-The-Loop Lab (ITL)), we would likely have to resort to manual aesthetic tweaks. Additionally, interpreting UpSet plots can become challenging when there are a large number of sets. In our case, we only have six sets (UCDP, IMI, COW, ISD, GW, and MSSL), but our data would need serious manipulation if we were comparing countries across, say, sixteen sets.  
 
-# Further Resources
+### Further Resources
+
+Below are some useful resources that I found particularly helpful for my own understanding of the UpSetR package. 
 
 * [CRAN](https://cran.r-project.org/web/packages/UpSetR/vignettes/basic.usage.html) - The creators of the UpSetR package have a concise and easy-to-follow vignette on Cran. 
 * [Little Miss Data's Blog](https://www.littlemissdata.com/blog/set-analysis) - Little Miss Data's blog on the benefits of UpSet plots over the use of Venn diagrams is an excellent starting point for those wanting to implement these visualizations in their own work.
