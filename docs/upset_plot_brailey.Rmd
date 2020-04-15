@@ -1,15 +1,23 @@
 ---
 title: "UpSet Plots in R"
-subtitle: "Center for Peace and Security Studies (cPASS)" 
+subtitle: "Center for Peace and Security Studies (cPASS)"
 author: "Thomas Brailey"
 date: "October 2019"
-output:
-  html_document:
-    df_print: paged
+header-includes:
+   - \setlength\parindent{24pt}\setlength{\parskip}{0.0pt plus 1.0pt}
+   - \usepackage{setspace}\onehalfspacing
+output: pdf_document
+fontsize: 10pt
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = 'H')
+
+if(!require(kableExtra)){
+    install.packages("kableExtra")
+    library(kableExtra)
+}
 ```
 
 # UpSet Plots in R: A Preferred Alternative to Venn Diagrams
@@ -26,6 +34,7 @@ First we need to set up the workspace and install the data. UpSet works best wit
 # Load packages
 library(magrittr)
 library(ggplot2)
+library(kableExtra)
 
 # Install data
 entities <- rio::import(paste0(here::here(), '/data/entities.RData'))
@@ -49,18 +58,27 @@ entities_clean <- as.data.frame(entities_clean)
 Here is a glimpse of our cleaned data. Our unit of analysis is "nation_wikidata_id". 
 
 ```{r eval =F, include=T, size = 'tiny'} 
-dplyr::glimpse(entities_clean)
-
-# Observations: 351
-# Variables: 7
-# $ nation_wikidata_id <chr> "Q1000", "Q1005", "Q1006", "Q1007", "Q1008", "Q1009", "Q1011", "Q1013", "Q1013421", "Q1014",...
-# $ `In MSSL`          <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,...
-# $ `In COW`           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
-# $ `In GW`            <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
-# $ `In IMI`           <dbl> 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1,...
-# $ `In UCDP`          <dbl> 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0,...
-# $ `In ISD`           <dbl> 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,...
+print(xtable::xtable(head(entities_clean, n = 10), type = "latex"), include.rownames = F)
 ```
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrrr}
+  \hline
+nation\_wikidata\_id & In MSSL & In COW & In GW & In IMI & In UCDP & In ISD \\ 
+  \hline
+Q1000 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1005 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1006 & 1.00 & 1.00 & 0.00 & 1.00 & 1.00 & 0.00 \\ 
+  Q1007 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1008 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1009 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1011 & 1.00 & 1.00 & 1.00 & 0.00 & 0.00 & 1.00 \\ 
+  Q1013 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+  Q1013421 & 1.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  Q1014 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 ### Using UpSetR
 
@@ -97,7 +115,7 @@ dev.off()
 
 Here is our output. Clear, concise, and able to simplify our large-N q-code entities dataset. Ordering the visualization by descending frequency shows that the MSSL dataset has the single largest number of nation Q-Code IDs. 97 of these Q-Codes can be found in all six of the datasets.  
 
-```{r, out.width = "2500px", out.height = "2000px", fig.cap = "UpSet Plot of Nation Q-Code Observations Across Datasets", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
+```{r, out.width = "500px", out.height = "300px", fig.cap = "UpSet Plot of Nation Q-Code Observations Across Datasets", echo = F, fig.align = "center", fig.pos = "ht", eval = T}
 knitr::include_graphics(paste0(here::here(), "/paper/figure/entities_upset.jpeg"))
 ```
 
