@@ -1,0 +1,123 @@
+---
+title: "Ontologies in R"
+author: "Thomas Brailey"
+date: "May 2020"
+output:
+  html_document:
+    df_print: paged
+header-includes:
+- \setlength\parindent{24pt}\setlength{\parskip}{0.0pt plus 1.0pt}
+- \usepackage{setspace}\onehalfspacing
+subtitle: Center for Peace and Security Studies (cPASS)
+fontsize: 10pt
+---
+
+When dealing with hierarchical data, ontologies, dendrograms, and trees can be a good way of visualizing relationships between the so-called "parent" and "child" nodes of a dataset. This document provides a cursory overview of hierarchical data and some useful packages in R to deal with such data.
+
+# Prep
+```{r}
+rm(list = ls())
+
+`%>%` <- 
+  magrittr::`%>%`
+```
+
+# Load and clean data
+## Load
+We start by loading the cleaned IISS data. This dataframe contains information about the count of military units at the country-year level. It is hierarchical in the sense that we break up military equipment into type and subtype. 
+```{r}
+# Load data
+df <- 
+  readRDS(file = "../../IISS/data/01e_addrows.rds")
+
+df <- 
+  data.frame(df)
+```
+
+## Prep
+We need the data in tree format.
+```{r}
+# Temp recode carriers
+df$tek[df$tek == "principal surface combatants_aircraft carriers_nuclear"] <- 
+  "principal surface combatants_nuclear carriers"
+df$tek[df$tek == "principal surface combatants_aircraft carriers_non-nuclear"] <- 
+  "principal surface combatants_conventional carriers"
+
+df <- 
+  df %>% 
+  dplyr::select(tek) %>%
+  tidyr::separate(tek, c("parent", "child"), sep = "_", remove = TRUE) %>%
+  dplyr::distinct() %>%
+  dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+
+df$child[df$child == "all"] <- NA
+```
+
+# Create tree
+Our first example uses the package *collapsibleTree*. 
+```{r, fig.height=10, fig.width=15, fig.align="center"}
+collapsible_tree <- collapsibleTree::collapsibleTree(df, hierarchy = c("parent", "child"), collapse = FALSE)
+
+collapsible_tree
+```
+
+Our next example uses the package *data.tree*. Using *data.tree* requires a little bit of re-formatting, but nothing too complicated. Calling print() on the object df_tree shows us the new structure of the data frame. In order to plot the tree, simply call plot().
+```{r}
+# Remove NAs 
+df$child[is.na(df$child)] <- ""
+ 
+# Generate pathString as new column
+df$pathString <- 
+  paste("Tek",
+        df$parent,
+        df$child,
+        sep = "|")
+
+                             
+
+# Create list 
+df_tree <- 
+  data.tree::as.Node(df, pathDelimiter = "|")
+
+print(df_tree, limit = 15)
+```
+
+```{r}
+plot(df_tree)
+```
+
+This isn't particularly helpful as a visualization, so we turn to the package *networkD3* to better visualize our data.tree object. 
+```{r}
+df_list <- 
+  data.tree::ToListExplicit(df_tree, unname = TRUE)
+
+df_vis <- 
+  networkD3::radialNetwork(df_list)
+
+df_vis
+```
+
+networkD3 has plenty of tree and dendrogram templates to choose from. 
+```{r}
+df_vis <- 
+  networkD3::diagonalNetwork(df_list)
+
+df_vis
+```
+
+For further reading, see the vignettes for the packages discussed above: 
+
+ - [collapsibleTree](https://cran.r-project.org/web/packages/collapsibleTree/collapsibleTree.pdf) 
+
+ - [data.tree](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
+
+ - [networkD3](https://cran.r-project.org/web/packages/networkD3/networkD3.pdf)
+
+There are many other packages in R designed to visualize heirarchical data. They all essentially have the same capabilities as the packages we have looked at in this document. Here are a few of them:
+
+ - [igraph](https://igraph.org/r/)
+
+ - [ontologyX](https://cran.r-project.org/web/packages/ontologyIndex/vignettes/intro-to-ontologyX.html)
+
+ - [ggdendro](https://cran.r-project.org/web/packages/ggdendro/index.html)
+ 
