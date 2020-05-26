@@ -3,6 +3,7 @@ title: "Ontologies in R"
 author: "Thomas Brailey"
 date: "May 2020"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 header-includes:
@@ -18,6 +19,7 @@ When dealing with hierarchical data, ontologies, dendrograms, and trees can be a
 ```{r}
 rm(list = ls())
 
+library(webshot)
 `%>%` <- 
   magrittr::`%>%`
 ```
@@ -55,10 +57,26 @@ df$child[df$child == "all"] <- NA
 
 # Create tree
 Our first example uses the package *collapsibleTree*. 
-```{r, fig.height=10, fig.width=15, fig.align="center"}
-collapsible_tree <- collapsibleTree::collapsibleTree(df, hierarchy = c("parent", "child"), collapse = FALSE)
+```{r}
+widgetToPng <- function(widget, file = "widget.png",  ...) {
+  temp <- tempfile(fileext = ".html")
+  file <- R.utils::getAbsolutePath(file)
+  htmlwidgets::saveWidget(widget, temp)
+  webshot(
+    temp, file,
+    selector = "#htmlwidget_container",
+    zoom = 2,
+    delay = 0.5,
+    ...
+  )
+}
 
-collapsible_tree
+widgetToPng(
+collapsibleTree::collapsibleTree(df, hierarchy = c("parent", "child"), 
+                                 collapse = FALSE, width = 800, height = 800),  
+"collapsibleTree.png"
+)
+
 ```
 
 Our next example uses the package *data.tree*. Using *data.tree* requires a little bit of re-formatting, but nothing too complicated. Calling print() on the object df_tree shows us the new structure of the data frame. In order to plot the tree, simply call plot().
@@ -83,7 +101,10 @@ print(df_tree, limit = 15)
 ```
 
 ```{r}
-plot(df_tree)
+widgetToPng(
+plot(df_tree),
+"collapsibleTree2.png"
+)
 ```
 
 This isn't particularly helpful as a visualization, so we turn to the package *networkD3* to better visualize our data.tree object. 
@@ -105,6 +126,8 @@ df_vis <-
 df_vis
 ```
 
+These packages allow one to easily manipulate a data.frame object to a hierarchical dataset with ease. There are more complex methods which involve edges and vertices. This information will be added to the document at a later date. 
+
 For further reading, see the vignettes for the packages discussed above: 
 
  - [collapsibleTree](https://cran.r-project.org/web/packages/collapsibleTree/collapsibleTree.pdf) 
@@ -113,7 +136,7 @@ For further reading, see the vignettes for the packages discussed above:
 
  - [networkD3](https://cran.r-project.org/web/packages/networkD3/networkD3.pdf)
 
-There are many other packages in R designed to visualize heirarchical data. They all essentially have the same capabilities as the packages we have looked at in this document. Here are a few of them:
+There are many other packages in R designed to visualize hierarchical data. They all essentially have the same capabilities as the packages we have looked at in this document. Here are a few of them:
 
  - [igraph](https://igraph.org/r/)
 
