@@ -56,8 +56,9 @@ df$child[df$child == "all"] <- NA
 ```
 
 # Create tree
-Our first example uses the package *collapsibleTree*. 
+Our first example uses the package *collapsibleTree*. Becuase this package (and other packages that we will look at) is designed to produce interactive plots for .html files and Shiny web apps, saving the images as static files can be a little tricky. The function widgetToPng() allows one to easily save .html visualizations as a static .png image. 
 ```{r}
+# Define the plot-saving function
 widgetToPng <- function(widget, file = "widget.png",  ...) {
   temp <- tempfile(fileext = ".html")
   file <- R.utils::getAbsolutePath(file)
@@ -71,6 +72,7 @@ widgetToPng <- function(widget, file = "widget.png",  ...) {
   )
 }
 
+# Plot the collapsibleTree object inside the plot-saving function
 widgetToPng(
 collapsibleTree::collapsibleTree(df, hierarchy = c("parent", "child"), 
                                  collapse = FALSE, width = 800, height = 800),  
