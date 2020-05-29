@@ -1,0 +1,88 @@
+---
+title: "Waffle plots and heat plots in R"
+author: "Thomas Brailey"
+date: "May 2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+header-includes:
+- \setlength\parindent{24pt}\setlength{\parskip}{0.0pt plus 1.0pt}
+- \usepackage{setspace}\onehalfspacing
+subtitle: Center for Peace and Security Studies (cPASS)
+fontsize: 10pt
+---
+
+This document provides a cursory overview of waffle plots and heat plots in R. These plots can be useful for plotting large panel datasets. 
+
+# Prep
+Start by clearing your workspace and loading necessary packages (not included). 
+```{r, include="false"}
+rm(list = ls())
+
+library(ggplot2)
+`%>%` <- 
+  magrittr::`%>%`
+```
+
+# Load and clean data
+## Load
+We start by loading a dataset on country military specialization scores. The unit of analysis is country-year-specialization score (not included).
+```{r, include="false"}
+# Load data
+df <- 
+  readRDS(file = "../../IISS/data/02a_DV_specialization.rds")
+
+df <- 
+  data.frame(df)
+```
+
+## Prep
+After general cleaning, there isn't much in the way of data preparation. Just make sure that, if your highest level of analysis is a character variable, coerce it into a factor to allow for alphabetical reordering. 
+```{r}
+# Prep data
+scores_waffle <- 
+  df %>% 
+  dplyr::filter(year != "   0") %>% 
+  dplyr::mutate(country = forcats::fct_reorder(country, dplyr::desc(country)))
+
+# Specify color palette
+my_palette <- 
+  RColorBrewer::brewer.pal(7, "Spectral")
+```
+
+
+# Plot
+Waffle plots can be made using just ggplot2.  
+```{r,  fig.width = 12, fig.height = 16}
+p2 <- 
+  ggplot(scores_waffle, aes(x = country, y = year, fill = d)) +
+  geom_tile(color = "white", size = 0.35) +
+  scale_fill_gradientn(colors = my_palette, na.value = 'white') +
+  theme_bw() +
+  coord_flip() +
+  labs(title = "Military Specialization by Country by Year",
+       x = "Country",
+       y = "Year",
+       fill = "Specialization Score",
+       caption = "") +
+  theme(panel.grid = element_blank(),
+        title = element_text(size = 16),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12, angle = 90),
+        axis.text.y = element_text(size = 8),
+        strip.text = element_text(size = 12),
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        legend.title = element_text())
+p2
+```
+
+Voila! These types of plots can be customized in all kinds of ways. See below for expanding your heat plot knowledge: 
+
+ - [Waffle and swarm plots](https://paulvanderlaken.com/2019/01/25/visualization-innovation-waffleplots-and-swarmplots-aka-beeplots/)
+ 
+ - [Heat maps](https://www.r-graph-gallery.com/heatmap.html)
+ 
+ - [Animated and interactive heat plots](https://www.r-bloggers.com/the-spread-of-covid-19-across-countries-visualization-with-r/)

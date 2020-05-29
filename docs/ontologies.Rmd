@@ -16,7 +16,8 @@ fontsize: 10pt
 When dealing with hierarchical data, ontologies, dendrograms, and trees can be a good way of visualizing relationships between the so-called "parent" and "child" nodes of a dataset. This document provides a cursory overview of hierarchical data and some useful packages in R to deal with such data.
 
 # Prep
-```{r}
+Start by clearing your workspace and loading necessary packages (not included). 
+```{r,include="false"}
 rm(list = ls())
 
 library(webshot)
@@ -26,8 +27,8 @@ library(webshot)
 
 # Load and clean data
 ## Load
-We start by loading the cleaned IISS data. This dataframe contains information about the count of military units at the country-year level. It is hierarchical in the sense that we break up military equipment into type and subtype. 
-```{r}
+We start by loading the cleaned IISS data. This dataframe contains information about the count of military units at the country-year level. It is hierarchical in the sense that we break up military equipment into type and subtype (not included). 
+```{r,include="false"}
 # Load data
 df <- 
   readRDS(file = "../../IISS/data/01e_addrows.rds")
