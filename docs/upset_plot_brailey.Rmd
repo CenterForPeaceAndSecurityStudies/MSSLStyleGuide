@@ -1,12 +1,15 @@
 ---
 title: "UpSet Plots in R"
-subtitle: "Center for Peace and Security Studies (cPASS)"
 author: "Thomas Brailey"
 date: "October 2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 header-includes:
-   - \setlength\parindent{24pt}\setlength{\parskip}{0.0pt plus 1.0pt}
-   - \usepackage{setspace}\onehalfspacing
-output: pdf_document
+- \setlength\parindent{24pt}\setlength{\parskip}{0.0pt plus 1.0pt}
+- \usepackage{setspace}\onehalfspacing
+subtitle: Center for Peace and Security Studies (cPASS)
 fontsize: 10pt
 ---
 
@@ -30,7 +33,7 @@ This document provides a basic but thorough workflow for formatting and plotting
 
 First we need to set up the workspace and install the data. UpSet works best with long-form data, so time-series and wide data should be melted accordingly. 
 
-```{r eval =F, include=T, size = 'tiny'} 
+```{r eval =T, include=T, size = 'tiny'} 
 # Load packages
 library(magrittr)
 library(ggplot2)
@@ -42,7 +45,7 @@ entities <- rio::import(paste0(here::here(), '/data/entities.RData'))
 
 We want to look at which nation q-codes are present in the Machine Learning for Social Science Lab (MSSL) dataset compared with those in existing datasets (COW, GW, IMI, UCDP, and ISD). Note that, for the purposes of visualization, NA values need to be set to 0. 
 
-```{r eval =F, include=T, size = 'tiny'} 
+```{r eval =T, include=T, size = 'tiny'} 
 # Subset by relevant variables (if necessary) and clean data
 entities_clean <- entities %>%
   dplyr::rename("In MSSL" = in_MSSL,
@@ -123,6 +126,38 @@ knitr::include_graphics(paste0(here::here(), "/paper/figure/entities_upset.jpeg"
 
 While UpSet plots are useful for large-N datasets and comparing combinations of variables, the package itself has some limitations. For example, the standard package does not allow for titles and so the grid:: package must be employed. As such, aesthetic tweaks are somewhat more challenging than, say, ggplot2. That means, if we were to create a function that loops across multiple country/years (as is often the case with visualizations in the In-The-Loop Lab (ITL)), we would likely have to resort to manual aesthetic tweaks. Additionally, interpreting UpSet plots can become challenging when there are a large number of sets. In our case, we only have six sets (UCDP, IMI, COW, ISD, GW, and MSSL), but our data would need serious manipulation if we were comparing countries across, say, sixteen sets.  
 
+### UpSet.js
+
+UpSet.js is a JavaScript re-implementation of UpSetR, taking all of the awesome aspects of the upset plot, and making them interactive. Below I provide a cursory overview of UpSet.js, using our entities_clean dataframe. 
+
+```{r eval =T, include=F, size = 'tiny'}
+# Load and install package
+devtools::install_url("https://github.com/upsetjs/upsetjs_r/releases/latest/download/upsetjs.tar.gz")
+```
+
+```{r eval =T, include=T, size = 'tiny'}
+library(upsetjs)
+
+# Convert entities_clean to long-form and remove the names of databases where q-codes are not found.  
+ent_long <- entities_clean %>% 
+  tidyr::gather(., Where, Present, `In MSSL`:`In ISD`) %>% 
+  dplyr::mutate(Present = as.logical(Present)) %>% 
+  dplyr::filter(Present != FALSE) %>%
+  dplyr::select(nation_wikidata_id, Where) %>% 
+  dplyr::group_by(nation_wikidata_id, Where)
+
+# Turn this new long data into a list
+entities_list <- split(ent_long$nation_wikidata_id, ent_long$Where)
+head(entities_list)[1:2]
+
+# Now create the interactive UpSet plot
+upsetjs() %>% 
+  fromList(entities_list) %>% 
+  interactiveChart()
+```
+
+A few things are worth noting about the plot and the function behind it. First, UpSet.js is can convert a data.frame (and expression) object into an upsetjs object, but given that entities_clean is slightly more complicated than the package's example datasets, it is easier to convert our dataframe into a list. Second, as of yet, there are few aesthetic tweaks that can be made to the chart, though this will likely change with future updates of the package. Lastly, one might notice that this upset plot is showing something different to the original UpSetR plot. The original plot shows *how many* unique country codes each database has. MSSL, for example, has 107 country codes that cannot be found in the other datasets. This upset plot shows the *total* number of country codes in each database, and then looks at how many country codes are common across each of the databases. Note also that the PDF version of this guide will not show the upset plot correctly given that it is an .html object. 
+
 ### Further Resources
 
 Below are some useful resources that I found particularly helpful for my own understanding of the UpSetR package. 
@@ -130,7 +165,8 @@ Below are some useful resources that I found particularly helpful for my own und
 * [CRAN](https://cran.r-project.org/web/packages/UpSetR/vignettes/basic.usage.html) - The creators of the UpSetR package have a concise and easy-to-follow vignette on Cran. 
 * [Little Miss Data's Blog](https://www.littlemissdata.com/blog/set-analysis) - Little Miss Data's blog on the benefits of UpSet plots over the use of Venn diagrams is an excellent starting point for those wanting to implement these visualizations in their own work.
 * [Little Miss Data's GitHub](https://github.com/lgellis/MiscTutorial/tree/master/sets) - Little Miss Data all posts their replication code for their blog post on their GitHub.
-* [R-bloggers](https://www.r-bloggers.com/hacking-our-way-through-upsetr/) - One of the benefits of UpSetR is that it can be modified with ease. From adding extra labels, titles, and text using the grid:: package, to implementing different color schemes along the observations bar, UpSetR is very versatile. This page assumes a strong understanding of R and writing packages. 
+* [R-bloggers](https://www.r-bloggers.com/hacking-our-way-through-upsetr/) - One of the benefits of UpSetR is that it can be modified with ease. From adding extra labels, titles, and text using the grid:: package, to implementing different color schemes along the observations bar, UpSetR is very versatile. This page assumes a strong understanding of R and writing packages.
+* [UpSet.js Jupyter Widget](https://cran.r-project.org/web/packages/upsetjs/vignettes/basic.html)
 
 
 
